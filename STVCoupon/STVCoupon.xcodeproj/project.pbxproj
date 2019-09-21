@@ -14,6 +14,10 @@
 		64FD64F92335ADE600898A68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64FD64F72335ADE600898A68 /* LaunchScreen.storyboard */; };
 		64FD65042335ADE600898A68 /* STVCouponTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD65032335ADE600898A68 /* STVCouponTests.swift */; };
 		64FD650F2335ADE600898A68 /* STVCouponUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD650E2335ADE600898A68 /* STVCouponUITests.swift */; };
+		64FD65272335B43900898A68 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64FD65232335B43800898A68 /* Alamofire.framework */; };
+		64FD65282335B43900898A68 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64FD65242335B43800898A68 /* PromiseKit.framework */; };
+		64FD65292335B43900898A68 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64FD65252335B43800898A68 /* Realm.framework */; };
+		64FD652A2335B43900898A68 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64FD65262335B43900898A68 /* RealmSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		64FD650A2335ADE600898A68 /* STVCouponUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STVCouponUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64FD650E2335ADE600898A68 /* STVCouponUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STVCouponUITests.swift; sourceTree = "<group>"; };
 		64FD65102335ADE600898A68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64FD65232335B43800898A68 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		64FD65242335B43800898A68 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
+		64FD65252335B43800898A68 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		64FD65262335B43900898A68 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64FD65272335B43900898A68 /* Alamofire.framework in Frameworks */,
+				64FD65282335B43900898A68 /* PromiseKit.framework in Frameworks */,
+				64FD65292335B43900898A68 /* Realm.framework in Frameworks */,
+				64FD652A2335B43900898A68 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +93,7 @@
 				64FD65022335ADE600898A68 /* STVCouponTests */,
 				64FD650D2335ADE600898A68 /* STVCouponUITests */,
 				64FD64EC2335ADE400898A68 /* Products */,
+				64FD65222335B43800898A68 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,6 +186,17 @@
 			path = CouponDetail;
 			sourceTree = "<group>";
 		};
+		64FD65222335B43800898A68 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64FD65232335B43800898A68 /* Alamofire.framework */,
+				64FD65242335B43800898A68 /* PromiseKit.framework */,
+				64FD65252335B43800898A68 /* Realm.framework */,
+				64FD65262335B43900898A68 /* RealmSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -183,6 +207,7 @@
 				64FD64E72335ADE400898A68 /* Sources */,
 				64FD64E82335ADE400898A68 /* Frameworks */,
 				64FD64E92335ADE400898A68 /* Resources */,
+				64FD652B2335B43D00898A68 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -298,6 +323,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		64FD652B2335B43D00898A68 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PromiseKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		64FD64E72335ADE400898A68 /* Sources */ = {
@@ -482,6 +532,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PCCZJUYRT6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/STVCoupon/Application/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -501,6 +555,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PCCZJUYRT6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/STVCoupon/Application/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
