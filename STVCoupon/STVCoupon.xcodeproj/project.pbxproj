@@ -62,6 +62,7 @@
 		64FD65BB233609B100898A68 /* TimeZone+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD65B1233609B100898A68 /* TimeZone+Extensions.swift */; };
 		64FD65BC233609B100898A68 /* DateFormatter+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD65B2233609B100898A68 /* DateFormatter+Shared.swift */; };
 		64FD65BD233609B100898A68 /* Locale+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD65B3233609B100898A68 /* Locale+Extensions.swift */; };
+		64FD65CD23360E6100898A68 /* Date+Compare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD65C323360E6100898A68 /* Date+Compare.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +146,7 @@
 		64FD65B1233609B100898A68 /* TimeZone+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeZone+Extensions.swift"; sourceTree = "<group>"; };
 		64FD65B2233609B100898A68 /* DateFormatter+Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Shared.swift"; sourceTree = "<group>"; };
 		64FD65B3233609B100898A68 /* Locale+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+Extensions.swift"; sourceTree = "<group>"; };
+		64FD65C323360E6100898A68 /* Date+Compare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Compare.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -468,12 +470,13 @@
 		64FD65A9233609A900898A68 /* Date */ = {
 			isa = PBXGroup;
 			children = (
-				64FD65AA233609B100898A68 /* DateFormat.swift */,
+				64FD65C323360E6100898A68 /* Date+Compare.swift */,
 				64FD65AB233609B100898A68 /* Date+Template.swift */,
-				64FD65B0233609B100898A68 /* String+ToDate.swift */,
-				64FD65B1233609B100898A68 /* TimeZone+Extensions.swift */,
+				64FD65AA233609B100898A68 /* DateFormat.swift */,
 				64FD65B2233609B100898A68 /* DateFormatter+Shared.swift */,
 				64FD65B3233609B100898A68 /* Locale+Extensions.swift */,
+				64FD65B0233609B100898A68 /* String+ToDate.swift */,
+				64FD65B1233609B100898A68 /* TimeZone+Extensions.swift */,
 			);
 			path = Date;
 			sourceTree = "<group>";
@@ -666,6 +669,7 @@
 				64FD65742335DC3400898A68 /* UICollectionView+CellCastable.swift in Sources */,
 				64FD65442335B9AB00898A68 /* CouponListRouter.swift in Sources */,
 				64FD65A02335FA3B00898A68 /* CouponDetailInteractor.swift in Sources */,
+				64FD65CD23360E6100898A68 /* Date+Compare.swift in Sources */,
 				64FD65672335CCEA00898A68 /* Realm+Shared.swift in Sources */,
 				64FD65392335B74600898A68 /* CouponListAPIRequest.swift in Sources */,
 				64FD65692335CCEA00898A68 /* RealmInitializerCompatible.swift in Sources */,

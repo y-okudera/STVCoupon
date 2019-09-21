@@ -47,10 +47,12 @@ final class CouponDetailViewController: UIViewController {
         super.viewDidLoad()
         presenter.viewDidLoad()
         
-        #if DEBUG
-        couponBaseViewHeightLayout.constant = 250 + 280
-        stackView.addArrangedSubview(usageConfirmView)
-        #endif
+        if presenter.couponEntity.usedDate == nil {
+            stackView.addArrangedSubview(willUseView)
+            expireLabel.text = presenter.couponEntity.validPeriod()
+        } else {
+            stackView.addArrangedSubview(usedView)
+        }
     }
     
     @IBAction func tappedCloseButton(_ sender: UIButton) {

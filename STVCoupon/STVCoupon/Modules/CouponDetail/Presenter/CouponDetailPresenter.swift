@@ -12,6 +12,7 @@ import Foundation
 
 protocol CouponDetailPresentation: class {
     func viewDidLoad()
+    var couponEntity: CouponEntity! {get set}
 }
 
 // MARK: - class
@@ -22,7 +23,7 @@ final class CouponDetailPresenter {
     private weak var view: CouponDetailView?
     private let interactor: CouponDetailUsecase
     private let router: CouponDetailWireframe
-    private var couponEntity: CouponEntity!
+    var couponEntity: CouponEntity!
 
     init(view: CouponDetailView, interactor: CouponDetailUsecase, router: CouponDetailWireframe, couponEntity: CouponEntity) {
         self.view = view
