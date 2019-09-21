@@ -32,6 +32,15 @@
 		64FD654D2335C1C500898A68 /* CouponListAPIReturnCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD654C2335C1C500898A68 /* CouponListAPIReturnCode.swift */; };
 		64FD654F2335C56C00898A68 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64FD654E2335C56C00898A68 /* Localizable.strings */; };
 		64FD65522335C64E00898A68 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD65512335C64E00898A68 /* String+Localized.swift */; };
+		64FD655F2335CAD600898A68 /* CouponEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD655E2335CAD600898A68 /* CouponEntity.swift */; };
+		64FD65612335CB6500898A68 /* CouponDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD65602335CB6500898A68 /* CouponDao.swift */; };
+		64FD65672335CCEA00898A68 /* Realm+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD65622335CCE900898A68 /* Realm+Shared.swift */; };
+		64FD65682335CCEA00898A68 /* RealmInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD65632335CCE900898A68 /* RealmInitializer.swift */; };
+		64FD65692335CCEA00898A68 /* RealmInitializerCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD65642335CCE900898A68 /* RealmInitializerCompatible.swift */; };
+		64FD656A2335CCEA00898A68 /* RealmDaoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD65652335CCE900898A68 /* RealmDaoHelper.swift */; };
+		64FD656B2335CCEA00898A68 /* Realm+WriteAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD65662335CCEA00898A68 /* Realm+WriteAsync.swift */; };
+		64FD65702335CD3F00898A68 /* ExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FD656F2335CD3F00898A68 /* ExceptionHandler.m */; };
+		64FD65722335CD7400898A68 /* ExceptionCatchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD65712335CD7400898A68 /* ExceptionCatchable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +92,17 @@
 		64FD654C2335C1C500898A68 /* CouponListAPIReturnCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponListAPIReturnCode.swift; sourceTree = "<group>"; };
 		64FD654E2335C56C00898A68 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		64FD65512335C64E00898A68 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		64FD655E2335CAD600898A68 /* CouponEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponEntity.swift; sourceTree = "<group>"; };
+		64FD65602335CB6500898A68 /* CouponDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponDao.swift; sourceTree = "<group>"; };
+		64FD65622335CCE900898A68 /* Realm+Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Realm+Shared.swift"; sourceTree = "<group>"; };
+		64FD65632335CCE900898A68 /* RealmInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmInitializer.swift; sourceTree = "<group>"; };
+		64FD65642335CCE900898A68 /* RealmInitializerCompatible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmInitializerCompatible.swift; sourceTree = "<group>"; };
+		64FD65652335CCE900898A68 /* RealmDaoHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDaoHelper.swift; sourceTree = "<group>"; };
+		64FD65662335CCEA00898A68 /* Realm+WriteAsync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Realm+WriteAsync.swift"; sourceTree = "<group>"; };
+		64FD656D2335CD3F00898A68 /* STVCoupon-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STVCoupon-Bridging-Header.h"; sourceTree = "<group>"; };
+		64FD656E2335CD3F00898A68 /* ExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExceptionHandler.h; sourceTree = "<group>"; };
+		64FD656F2335CD3F00898A68 /* ExceptionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExceptionHandler.m; sourceTree = "<group>"; };
+		64FD65712335CD7400898A68 /* ExceptionCatchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExceptionCatchable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +199,8 @@
 		64FD651D2335AE9B00898A68 /* Enitities */ = {
 			isa = PBXGroup;
 			children = (
+				64FD65602335CB6500898A68 /* CouponDao.swift */,
+				64FD655E2335CAD600898A68 /* CouponEntity.swift */,
 			);
 			path = Enitities;
 			sourceTree = "<group>";
@@ -234,6 +256,8 @@
 		64FD652C2335B5D500898A68 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				64FD656C2335CD2700898A68 /* ExceptionHandler */,
+				64FD65532335C93600898A68 /* Realm */,
 				64FD65352335B65100898A68 /* APIClient */,
 			);
 			path = Utilities;
@@ -293,6 +317,29 @@
 				64FD65512335C64E00898A68 /* String+Localized.swift */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		64FD65532335C93600898A68 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				64FD65622335CCE900898A68 /* Realm+Shared.swift */,
+				64FD65662335CCEA00898A68 /* Realm+WriteAsync.swift */,
+				64FD65652335CCE900898A68 /* RealmDaoHelper.swift */,
+				64FD65632335CCE900898A68 /* RealmInitializer.swift */,
+				64FD65642335CCE900898A68 /* RealmInitializerCompatible.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		64FD656C2335CD2700898A68 /* ExceptionHandler */ = {
+			isa = PBXGroup;
+			children = (
+				64FD65712335CD7400898A68 /* ExceptionCatchable.swift */,
+				64FD656E2335CD3F00898A68 /* ExceptionHandler.h */,
+				64FD656F2335CD3F00898A68 /* ExceptionHandler.m */,
+				64FD656D2335CD3F00898A68 /* STVCoupon-Bridging-Header.h */,
+			);
+			path = ExceptionHandler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,6 +411,7 @@
 				TargetAttributes = {
 					64FD64EA2335ADE400898A68 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 					64FD64FE2335ADE600898A68 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -458,16 +506,25 @@
 				64FD65422335B9AB00898A68 /* UIViewController+Instantiate.swift in Sources */,
 				64FD64EF2335ADE400898A68 /* AppDelegate.swift in Sources */,
 				64FD65312335B5F000898A68 /* APIError.swift in Sources */,
+				64FD65702335CD3F00898A68 /* ExceptionHandler.m in Sources */,
 				64FD65332335B5F000898A68 /* APIRequest.swift in Sources */,
+				64FD655F2335CAD600898A68 /* CouponEntity.swift in Sources */,
 				64FD65432335B9AB00898A68 /* CouponListPresenter.swift in Sources */,
+				64FD65722335CD7400898A68 /* ExceptionCatchable.swift in Sources */,
 				64FD65322335B5F000898A68 /* APIClient.swift in Sources */,
 				64FD654B2335BDC500898A68 /* UIColor+AppTheme.swift in Sources */,
 				64FD65522335C64E00898A68 /* String+Localized.swift in Sources */,
 				64FD654D2335C1C500898A68 /* CouponListAPIReturnCode.swift in Sources */,
 				64FD65462335B9AB00898A68 /* CouponListViewController.swift in Sources */,
 				64FD65442335B9AB00898A68 /* CouponListRouter.swift in Sources */,
+				64FD65672335CCEA00898A68 /* Realm+Shared.swift in Sources */,
 				64FD65392335B74600898A68 /* CouponListAPIRequest.swift in Sources */,
+				64FD65692335CCEA00898A68 /* RealmInitializerCompatible.swift in Sources */,
+				64FD65612335CB6500898A68 /* CouponDao.swift in Sources */,
+				64FD656B2335CCEA00898A68 /* Realm+WriteAsync.swift in Sources */,
 				64FD653B2335B78D00898A68 /* CouponListAPIResponse.swift in Sources */,
+				64FD65682335CCEA00898A68 /* RealmInitializer.swift in Sources */,
+				64FD656A2335CCEA00898A68 /* RealmDaoHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,6 +691,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PCCZJUYRT6;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -648,6 +706,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.st-ventures.STVCoupon";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "STVCoupon/Utilities/ExceptionHandler/STVCoupon-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -657,6 +717,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PCCZJUYRT6;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -671,6 +732,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.st-ventures.STVCoupon";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "STVCoupon/Utilities/ExceptionHandler/STVCoupon-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

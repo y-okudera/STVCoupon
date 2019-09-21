@@ -17,7 +17,7 @@ protocol CouponListUsecase {
 
 /// 処理結果をPresenterに通知する
 protocol CouponListInteractorDelegate: class {
-    func didFetchCouponList(response: CouponListAPIResponse)
+    func didFetchCouponList(coupons: [CouponEntity])
     func didFailWithAPIError(errorMessage: String)
 }
 
@@ -49,8 +49,12 @@ extension CouponListInteractor: CouponListUsecase {
                     return
                 }
                 
+                // データベースを更新
+                self.updateDatabase(coupons: couponListResponse.couponList)
+                
                 // 正常終了を通知
-                self.output?.didFetchCouponList(response: couponListResponse)
+                let savedCoupons = self.readCouponsFromDatabase()
+                self.output?.didFetchCouponList(coupons: savedCoupons)
             }
             .catch { error in
                 
@@ -61,6 +65,13 @@ extension CouponListInteractor: CouponListUsecase {
                 }
                 print(apiError.message)
                 #endif
+                
+                // オフラインの場合は、データベースからクーポン情報を取得する
+                if case .connectionError = apiError {
+                    let savedCoupons = self.readCouponsFromDatabase()
+                    // 正常終了を通知
+                    self.output?.didFetchCouponList(coupons: savedCoupons)
+                }
                 
                 // エラーを通知
                 let errorMessage = "COUPON_LIST_ERROR_9999".localized()
@@ -79,5 +90,45 @@ extension CouponListInteractor: CouponListUsecase {
             return nil
         }
         return userMessage
+    }
+    
+    /// データベースのクーポン情報を更新する
+    private func updateDatabase(coupons: [Coupon]) {
+        let dao = CouponDao()
+        dao.delegate = self
+        
+        let savedCoupons = dao.findAll()
+        var willAddCoupons = [Coupon]()
+        
+        var willAddCouponIDs = coupons.map { $0.couponID }
+        let savedAddCouponIDs = savedCoupons.map { $0.couponID }
+        willAddCouponIDs = willAddCouponIDs.filter { !savedAddCouponIDs.contains($0) }
+        
+        coupons.forEach {
+            if willAddCouponIDs.contains($0.couponID) {
+                willAddCoupons.append($0)
+            }
+        }
+        
+        print("willAddCoupons", willAddCoupons)
+        if willAddCoupons.isEmpty {
+            return
+        }
+        dao.add(coupons: willAddCoupons)
+    }
+    
+    /// データベースのクーポン情報を更新する
+    private func readCouponsFromDatabase() -> [CouponEntity] {
+        let dao = CouponDao()
+        dao.delegate = self
+        
+        let savedCouponEntities = dao.findAllSortedByFromExpireAndPriceDown()
+        return savedCouponEntities
+    }
+}
+
+extension CouponListInteractor: CouponDaoDelegate {
+    func caughtError(couponDao: CouponDao, error: Error) {
+        assertionFailure("クーポンデータの登録失敗")
     }
 }

@@ -39,13 +39,13 @@ extension CouponListPresenter: CouponListPresentation {
 
 extension CouponListPresenter: CouponListInteractorDelegate {
     
-    func didFetchCouponList(response: CouponListAPIResponse) {
-        if response.couponCount == 0 {
+    func didFetchCouponList(coupons: [CouponEntity]) {
+        if coupons.isEmpty {
             // クーポン0件の場合のUI更新
             view?.showCouponIsZeroMessage()
             return
         }
-        view?.reloadCouponList(coupons: response.couponList)
+        view?.reloadCouponList(coupons: coupons)
     }
     
     func didFailWithAPIError(errorMessage: String) {

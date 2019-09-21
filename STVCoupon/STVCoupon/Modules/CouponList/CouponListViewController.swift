@@ -11,7 +11,7 @@ import UIKit
 // MARK: - protocol
 
 protocol CouponListView: class {
-    func reloadCouponList(coupons: [Coupon])
+    func reloadCouponList(coupons: [CouponEntity])
     func showCouponIsZeroMessage()
     func showAlert(title: String?, message: String)
 }
@@ -35,7 +35,7 @@ final class CouponListViewController: UIViewController {
 extension CouponListViewController: CouponListView {
     
     /// クーポン一覧を更新する
-    func reloadCouponList(coupons: [Coupon]) {
+    func reloadCouponList(coupons: [CouponEntity]) {
         print("reloadCouponList", coupons)
     }
     
