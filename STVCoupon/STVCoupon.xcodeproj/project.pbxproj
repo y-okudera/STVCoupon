@@ -1,0 +1,699 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		64FD64EF2335ADE400898A68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD64EE2335ADE400898A68 /* AppDelegate.swift */; };
+		64FD64F12335ADE400898A68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD64F02335ADE400898A68 /* ViewController.swift */; };
+		64FD64F42335ADE400898A68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64FD64F22335ADE400898A68 /* Main.storyboard */; };
+		64FD64F62335ADE600898A68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64FD64F52335ADE600898A68 /* Assets.xcassets */; };
+		64FD64F92335ADE600898A68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64FD64F72335ADE600898A68 /* LaunchScreen.storyboard */; };
+		64FD65042335ADE600898A68 /* STVCouponTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD65032335ADE600898A68 /* STVCouponTests.swift */; };
+		64FD650F2335ADE600898A68 /* STVCouponUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD650E2335ADE600898A68 /* STVCouponUITests.swift */; };
+		64FD65272335B43900898A68 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64FD65232335B43800898A68 /* Alamofire.framework */; };
+		64FD65282335B43900898A68 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64FD65242335B43800898A68 /* PromiseKit.framework */; };
+		64FD65292335B43900898A68 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64FD65252335B43800898A68 /* Realm.framework */; };
+		64FD652A2335B43900898A68 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64FD65262335B43900898A68 /* RealmSwift.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		64FD65002335ADE600898A68 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64FD64E32335ADE400898A68 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 64FD64EA2335ADE400898A68;
+			remoteInfo = STVCoupon;
+		};
+		64FD650B2335ADE600898A68 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64FD64E32335ADE400898A68 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 64FD64EA2335ADE400898A68;
+			remoteInfo = STVCoupon;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		64FD64EB2335ADE400898A68 /* STVCoupon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STVCoupon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		64FD64EE2335ADE400898A68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		64FD64F02335ADE400898A68 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		64FD64F32335ADE400898A68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		64FD64F52335ADE600898A68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		64FD64F82335ADE600898A68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		64FD64FA2335ADE600898A68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64FD64FF2335ADE600898A68 /* STVCouponTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STVCouponTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		64FD65032335ADE600898A68 /* STVCouponTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STVCouponTests.swift; sourceTree = "<group>"; };
+		64FD65052335ADE600898A68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64FD650A2335ADE600898A68 /* STVCouponUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STVCouponUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		64FD650E2335ADE600898A68 /* STVCouponUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STVCouponUITests.swift; sourceTree = "<group>"; };
+		64FD65102335ADE600898A68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64FD65232335B43800898A68 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		64FD65242335B43800898A68 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
+		64FD65252335B43800898A68 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		64FD65262335B43900898A68 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		64FD64E82335ADE400898A68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64FD65272335B43900898A68 /* Alamofire.framework in Frameworks */,
+				64FD65282335B43900898A68 /* PromiseKit.framework in Frameworks */,
+				64FD65292335B43900898A68 /* Realm.framework in Frameworks */,
+				64FD652A2335B43900898A68 /* RealmSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64FD64FC2335ADE600898A68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64FD65072335ADE600898A68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		64FD64E22335ADE400898A68 = {
+			isa = PBXGroup;
+			children = (
+				64FD64ED2335ADE400898A68 /* STVCoupon */,
+				64FD65022335ADE600898A68 /* STVCouponTests */,
+				64FD650D2335ADE600898A68 /* STVCouponUITests */,
+				64FD64EC2335ADE400898A68 /* Products */,
+				64FD65222335B43800898A68 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		64FD64EC2335ADE400898A68 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				64FD64EB2335ADE400898A68 /* STVCoupon.app */,
+				64FD64FF2335ADE600898A68 /* STVCouponTests.xctest */,
+				64FD650A2335ADE600898A68 /* STVCouponUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		64FD64ED2335ADE400898A68 /* STVCoupon */ = {
+			isa = PBXGroup;
+			children = (
+				64FD651C2335AE9300898A68 /* Application */,
+				64FD651D2335AE9B00898A68 /* Enitities */,
+				64FD64F22335ADE400898A68 /* Main.storyboard */,
+				64FD651E2335AEA200898A68 /* Modules */,
+				64FD651F2335AEAB00898A68 /* Resources */,
+				64FD64F02335ADE400898A68 /* ViewController.swift */,
+			);
+			path = STVCoupon;
+			sourceTree = "<group>";
+		};
+		64FD65022335ADE600898A68 /* STVCouponTests */ = {
+			isa = PBXGroup;
+			children = (
+				64FD65032335ADE600898A68 /* STVCouponTests.swift */,
+				64FD65052335ADE600898A68 /* Info.plist */,
+			);
+			path = STVCouponTests;
+			sourceTree = "<group>";
+		};
+		64FD650D2335ADE600898A68 /* STVCouponUITests */ = {
+			isa = PBXGroup;
+			children = (
+				64FD650E2335ADE600898A68 /* STVCouponUITests.swift */,
+				64FD65102335ADE600898A68 /* Info.plist */,
+			);
+			path = STVCouponUITests;
+			sourceTree = "<group>";
+		};
+		64FD651C2335AE9300898A68 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				64FD64EE2335ADE400898A68 /* AppDelegate.swift */,
+				64FD64FA2335ADE600898A68 /* Info.plist */,
+				64FD64F72335ADE600898A68 /* LaunchScreen.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		64FD651D2335AE9B00898A68 /* Enitities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enitities;
+			sourceTree = "<group>";
+		};
+		64FD651E2335AEA200898A68 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				64FD65212335AF1600898A68 /* CouponDetail */,
+				64FD65202335AEFD00898A68 /* CouponList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		64FD651F2335AEAB00898A68 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				64FD64F52335ADE600898A68 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		64FD65202335AEFD00898A68 /* CouponList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CouponList;
+			sourceTree = "<group>";
+		};
+		64FD65212335AF1600898A68 /* CouponDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CouponDetail;
+			sourceTree = "<group>";
+		};
+		64FD65222335B43800898A68 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64FD65232335B43800898A68 /* Alamofire.framework */,
+				64FD65242335B43800898A68 /* PromiseKit.framework */,
+				64FD65252335B43800898A68 /* Realm.framework */,
+				64FD65262335B43900898A68 /* RealmSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		64FD64EA2335ADE400898A68 /* STVCoupon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64FD65132335ADE600898A68 /* Build configuration list for PBXNativeTarget "STVCoupon" */;
+			buildPhases = (
+				64FD64E72335ADE400898A68 /* Sources */,
+				64FD64E82335ADE400898A68 /* Frameworks */,
+				64FD64E92335ADE400898A68 /* Resources */,
+				64FD652B2335B43D00898A68 /* Carthage */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = STVCoupon;
+			productName = STVCoupon;
+			productReference = 64FD64EB2335ADE400898A68 /* STVCoupon.app */;
+			productType = "com.apple.product-type.application";
+		};
+		64FD64FE2335ADE600898A68 /* STVCouponTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64FD65162335ADE600898A68 /* Build configuration list for PBXNativeTarget "STVCouponTests" */;
+			buildPhases = (
+				64FD64FB2335ADE600898A68 /* Sources */,
+				64FD64FC2335ADE600898A68 /* Frameworks */,
+				64FD64FD2335ADE600898A68 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				64FD65012335ADE600898A68 /* PBXTargetDependency */,
+			);
+			name = STVCouponTests;
+			productName = STVCouponTests;
+			productReference = 64FD64FF2335ADE600898A68 /* STVCouponTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		64FD65092335ADE600898A68 /* STVCouponUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64FD65192335ADE600898A68 /* Build configuration list for PBXNativeTarget "STVCouponUITests" */;
+			buildPhases = (
+				64FD65062335ADE600898A68 /* Sources */,
+				64FD65072335ADE600898A68 /* Frameworks */,
+				64FD65082335ADE600898A68 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				64FD650C2335ADE600898A68 /* PBXTargetDependency */,
+			);
+			name = STVCouponUITests;
+			productName = STVCouponUITests;
+			productReference = 64FD650A2335ADE600898A68 /* STVCouponUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		64FD64E32335ADE400898A68 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Yuki Okudera";
+				TargetAttributes = {
+					64FD64EA2335ADE400898A68 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					64FD64FE2335ADE600898A68 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 64FD64EA2335ADE400898A68;
+					};
+					64FD65092335ADE600898A68 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 64FD64EA2335ADE400898A68;
+					};
+				};
+			};
+			buildConfigurationList = 64FD64E62335ADE400898A68 /* Build configuration list for PBXProject "STVCoupon" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 64FD64E22335ADE400898A68;
+			productRefGroup = 64FD64EC2335ADE400898A68 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				64FD64EA2335ADE400898A68 /* STVCoupon */,
+				64FD64FE2335ADE600898A68 /* STVCouponTests */,
+				64FD65092335ADE600898A68 /* STVCouponUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		64FD64E92335ADE400898A68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64FD64F92335ADE600898A68 /* LaunchScreen.storyboard in Resources */,
+				64FD64F62335ADE600898A68 /* Assets.xcassets in Resources */,
+				64FD64F42335ADE400898A68 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64FD64FD2335ADE600898A68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64FD65082335ADE600898A68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		64FD652B2335B43D00898A68 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PromiseKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		64FD64E72335ADE400898A68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64FD64F12335ADE400898A68 /* ViewController.swift in Sources */,
+				64FD64EF2335ADE400898A68 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64FD64FB2335ADE600898A68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64FD65042335ADE600898A68 /* STVCouponTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64FD65062335ADE600898A68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64FD650F2335ADE600898A68 /* STVCouponUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		64FD65012335ADE600898A68 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 64FD64EA2335ADE400898A68 /* STVCoupon */;
+			targetProxy = 64FD65002335ADE600898A68 /* PBXContainerItemProxy */;
+		};
+		64FD650C2335ADE600898A68 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 64FD64EA2335ADE400898A68 /* STVCoupon */;
+			targetProxy = 64FD650B2335ADE600898A68 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		64FD64F22335ADE400898A68 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64FD64F32335ADE400898A68 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		64FD64F72335ADE600898A68 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64FD64F82335ADE600898A68 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		64FD65112335ADE600898A68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		64FD65122335ADE600898A68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		64FD65142335ADE600898A68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PCCZJUYRT6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/STVCoupon/Application/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.st-ventures.STVCoupon";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		64FD65152335ADE600898A68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PCCZJUYRT6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/STVCoupon/Application/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.st-ventures.STVCoupon";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		64FD65172335ADE600898A68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PCCZJUYRT6;
+				INFOPLIST_FILE = STVCouponTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.st-ventures.STVCouponTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/STVCoupon.app/STVCoupon";
+			};
+			name = Debug;
+		};
+		64FD65182335ADE600898A68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PCCZJUYRT6;
+				INFOPLIST_FILE = STVCouponTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.st-ventures.STVCouponTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/STVCoupon.app/STVCoupon";
+			};
+			name = Release;
+		};
+		64FD651A2335ADE600898A68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PCCZJUYRT6;
+				INFOPLIST_FILE = STVCouponUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.st-ventures.STVCouponUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = STVCoupon;
+			};
+			name = Debug;
+		};
+		64FD651B2335ADE600898A68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PCCZJUYRT6;
+				INFOPLIST_FILE = STVCouponUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.st-ventures.STVCouponUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = STVCoupon;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		64FD64E62335ADE400898A68 /* Build configuration list for PBXProject "STVCoupon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64FD65112335ADE600898A68 /* Debug */,
+				64FD65122335ADE600898A68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64FD65132335ADE600898A68 /* Build configuration list for PBXNativeTarget "STVCoupon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64FD65142335ADE600898A68 /* Debug */,
+				64FD65152335ADE600898A68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64FD65162335ADE600898A68 /* Build configuration list for PBXNativeTarget "STVCouponTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64FD65172335ADE600898A68 /* Debug */,
+				64FD65182335ADE600898A68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64FD65192335ADE600898A68 /* Build configuration list for PBXNativeTarget "STVCouponUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64FD651A2335ADE600898A68 /* Debug */,
+				64FD651B2335ADE600898A68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 64FD64E32335ADE400898A68 /* Project object */;
+}
