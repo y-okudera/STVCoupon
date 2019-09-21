@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class CouponEntity: RealmSwift.Object {
+final class CouponEntity: RealmSwift.Object {
     
     /// クーポンのID
     @objc dynamic var couponID = ""
@@ -51,7 +51,11 @@ class CouponEntity: RealmSwift.Object {
     
     /// 有効期間を文字列で取得する
     func validPeriod() -> String {
-        
-        return "\(fromExpire)〜\(toExpire)"
+        guard
+            let fromExpireDate = fromExpire.toDate(dateFormat: .yMd_None),
+            let toExpireDate = toExpire.toDate(dateFormat: .yMd_None) else {
+                return ""
+        }
+        return fromExpireDate.toString(template: .date) + "〜" + toExpireDate.toString(template: .date)
     }
 }

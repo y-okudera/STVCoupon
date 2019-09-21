@@ -46,23 +46,20 @@ extension CouponListPresenter: CouponListPresentation {
     func didSelectItemAt(indexPath: IndexPath) {
         print("didSelectItemAt", indexPath)
         
-        if couponListProvider.couponEntities[indexPath.row].usedDate != nil {
+        let selectedCoupon = couponListProvider.couponEntities[indexPath.row]
+        if selectedCoupon.usedDate != nil {
             print("indexPath: \(indexPath)は、使用済み")
             return
         }
         
-        // TODO: 画面遷移を実装する
+        // クーポン詳細画面に遷移
+        self.router.showCouponDetail(selectedCoupon)
     }
 }
 
 extension CouponListPresenter: CouponListInteractorDelegate {
     
     func didFetchCouponList(coupons: [CouponEntity]) {
-        if coupons.isEmpty {
-            // クーポン0件の場合のUI更新
-            view?.showCouponIsZeroMessage()
-            return
-        }
         self.couponListProvider.set(couponEntities: coupons)
         view?.reloadCouponList()
     }
