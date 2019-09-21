@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  STVCoupon
+
+  Created by Yuki Okudera on 2019/09/21.
+  Copyright © 2019 Yuki Okudera. All rights reserved.
+*/
+
+// MARK: - クーポン一覧画面
+
+"COUPON_LIST" = "クーポン一覧";
+"OK" = "OK";
+"ERROR" = "エラー";
+"COUPON_LIST_ERROR_1001" = "内部エラーが発生しました。";
+"COUPON_LIST_ERROR_9999" = "現在一時的にご利用できない状態となっております。\n今しばらくお待ち下さい。";
