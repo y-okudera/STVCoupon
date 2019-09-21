@@ -11,7 +11,7 @@ import UIKit
 // MARK: - protocol
 
 protocol CouponListView: class {
-    func reloadCouponList(coupons: [CouponEntity])
+    func reloadCouponList()
     func showCouponIsZeroMessage()
     func showAlert(title: String?, message: String)
 }
@@ -21,10 +21,24 @@ protocol CouponListView: class {
 /// クーポン一覧画面
 final class CouponListViewController: UIViewController {
     
+    @IBOutlet private weak var collectionView: UICollectionView!
+    
     // Presenterへのアクセスはprotocolを介して行う
     var presenter: CouponListPresentation!
+    var couponListProvider: CouponListProvider!
     
     // MARK: - Life cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        collectionView.dataSource = presenter.couponListProvider
+        collectionView.delegate = self
+        CouponListCell.register(collectionView: collectionView)
+        
+        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -35,8 +49,8 @@ final class CouponListViewController: UIViewController {
 extension CouponListViewController: CouponListView {
     
     /// クーポン一覧を更新する
-    func reloadCouponList(coupons: [CouponEntity]) {
-        print("reloadCouponList", coupons)
+    func reloadCouponList() {
+        collectionView.reloadData()
     }
     
     /// クーポン0件のメッセージを表示する
@@ -51,5 +65,12 @@ extension CouponListViewController: CouponListView {
             .init(title: "OK".localized(), style: .default)
         )
         present(alert, animated: true, completion: nil)
+    }
+}
+
+extension CouponListViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.didSelectItemAt(indexPath: indexPath)
     }
 }

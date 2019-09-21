@@ -29,7 +29,12 @@ final class CouponListRouter {
         let view: CouponListViewController = .instantiate()
         let interactor = CouponListInteractor()
         let router = CouponListRouter(viewController: view)
-        let presenter = CouponListPresenter(view: view, interactor: interactor, router: router)
+        
+        let couponListProvider = CouponListProvider()
+        let presenter = CouponListPresenter(view: view,
+                                            interactor: interactor,
+                                            router: router,
+                                            couponListProvider: couponListProvider)
 
         // Interactorの通知先にPresenterを設定
         interactor.output = presenter

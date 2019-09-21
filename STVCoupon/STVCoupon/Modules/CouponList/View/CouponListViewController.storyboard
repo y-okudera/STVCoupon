@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XkZ-Ok-jRq">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Coupon List View Controller-->
+        <scene sceneID="eAj-ij-XCx">
+            <objects>
+                <viewController storyboardIdentifier="CouponListViewController" id="XkZ-Ok-jRq" customClass="CouponListViewController" customModule="STVCoupon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cGH-8i-I0H">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hrH-Vf-IqO">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2fF-Uy-UDW">
+                                    <size key="itemSize" width="400" height="92"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CouponListEmptyCell" id="bpI-ly-Wry" customClass="CouponListEmptyCell" customModule="STVCoupon" customModuleProvider="target">
+                                        <rect key="frame" x="7" y="10" width="400" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現在ご利用できるクーポンがありません。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGL-6i-b0g">
+                                                    <rect key="frame" x="16" y="13" width="368" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="368" id="h46-1f-tKv"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="PGL-6i-b0g" secondAttribute="trailing" constant="8" id="fRX-Gi-tAj"/>
+                                            <constraint firstItem="PGL-6i-b0g" firstAttribute="leading" secondItem="bpI-ly-Wry" secondAttribute="leadingMargin" constant="8" id="gNJ-fe-EuQ"/>
+                                            <constraint firstItem="PGL-6i-b0g" firstAttribute="centerY" secondItem="bpI-ly-Wry" secondAttribute="centerY" id="oMH-B4-yB6"/>
+                                        </constraints>
+                                        <size key="customSize" width="400" height="44"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="messageLabel" destination="PGL-6i-b0g" id="pde-WY-EBA"/>
+                                            <outlet property="messageLabelWidthLayout" destination="h46-1f-tKv" id="EDw-l1-vMb"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hrH-Vf-IqO" firstAttribute="bottom" secondItem="zVV-mz-TlY" secondAttribute="bottom" id="DBX-W4-2Nq"/>
+                            <constraint firstItem="hrH-Vf-IqO" firstAttribute="top" secondItem="zVV-mz-TlY" secondAttribute="top" id="DEJ-Tt-013"/>
+                            <constraint firstItem="hrH-Vf-IqO" firstAttribute="trailing" secondItem="zVV-mz-TlY" secondAttribute="trailing" id="kMf-LZ-CHm"/>
+                            <constraint firstItem="hrH-Vf-IqO" firstAttribute="leading" secondItem="zVV-mz-TlY" secondAttribute="leading" id="o3A-LF-iGC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zVV-mz-TlY"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="collectionView" destination="hrH-Vf-IqO" id="HaH-lo-cvm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ozt-Yz-JNd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140.57971014492756" y="91.741071428571431"/>
+        </scene>
+    </scenes>
+</document>

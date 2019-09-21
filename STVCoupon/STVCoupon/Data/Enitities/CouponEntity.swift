@@ -20,8 +20,10 @@ class CouponEntity: RealmSwift.Object {
     /// 有効期限の終了日
     @objc dynamic var toExpire = ""
     
-    /// 利用状況（未利用/利用済み）
-    @objc dynamic var used = false
+    /// 利用日時（yyyy/MM/dd hh:mm:ss）
+    ///
+    /// 未使用の場合は、nil
+    @objc dynamic var usedDate: String?
     /// いいねステータス（いいね済み/いいねしていない）
     @objc dynamic var wished = false
     
@@ -35,5 +37,21 @@ class CouponEntity: RealmSwift.Object {
         self.priceDown = coupon.priceDown
         self.fromExpire = coupon.fromExpire
         self.toExpire = coupon.toExpire
+    }
+    
+    convenience init(value: CouponEntity) {
+        self.init()
+        self.couponID = value.couponID
+        self.priceDown = value.priceDown
+        self.fromExpire = value.fromExpire
+        self.toExpire = value.toExpire
+        self.usedDate = value.usedDate
+        self.wished = value.wished
+    }
+    
+    /// 有効期間を文字列で取得する
+    func validPeriod() -> String {
+        
+        return "\(fromExpire)〜\(toExpire)"
     }
 }

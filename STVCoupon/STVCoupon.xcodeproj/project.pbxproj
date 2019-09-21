@@ -41,6 +41,14 @@
 		64FD656B2335CCEA00898A68 /* Realm+WriteAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD65662335CCEA00898A68 /* Realm+WriteAsync.swift */; };
 		64FD65702335CD3F00898A68 /* ExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FD656F2335CD3F00898A68 /* ExceptionHandler.m */; };
 		64FD65722335CD7400898A68 /* ExceptionCatchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD65712335CD7400898A68 /* ExceptionCatchable.swift */; };
+		64FD65742335DC3400898A68 /* UICollectionView+CellCastable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD65732335DC3400898A68 /* UICollectionView+CellCastable.swift */; };
+		64FD65762335DC4900898A68 /* UICollectionViewCell+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD65752335DC4900898A68 /* UICollectionViewCell+Identifier.swift */; };
+		64FD657C2335DCEA00898A68 /* NibRegistrable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD657B2335DCEA00898A68 /* NibRegistrable.swift */; };
+		64FD657F2335DD3300898A68 /* CouponListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD657D2335DD3300898A68 /* CouponListCell.swift */; };
+		64FD65802335DD3300898A68 /* CouponListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64FD657E2335DD3300898A68 /* CouponListCell.xib */; };
+		64FD65822335E28A00898A68 /* Int+Comma.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD65812335E28A00898A68 /* Int+Comma.swift */; };
+		64FD65842335E6F500898A68 /* CouponListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD65832335E6F500898A68 /* CouponListProvider.swift */; };
+		64FD65882335F73800898A68 /* CouponListEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD65872335F73800898A68 /* CouponListEmptyCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +111,14 @@
 		64FD656E2335CD3F00898A68 /* ExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExceptionHandler.h; sourceTree = "<group>"; };
 		64FD656F2335CD3F00898A68 /* ExceptionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExceptionHandler.m; sourceTree = "<group>"; };
 		64FD65712335CD7400898A68 /* ExceptionCatchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExceptionCatchable.swift; sourceTree = "<group>"; };
+		64FD65732335DC3400898A68 /* UICollectionView+CellCastable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+CellCastable.swift"; sourceTree = "<group>"; };
+		64FD65752335DC4900898A68 /* UICollectionViewCell+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Identifier.swift"; sourceTree = "<group>"; };
+		64FD657B2335DCEA00898A68 /* NibRegistrable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibRegistrable.swift; sourceTree = "<group>"; };
+		64FD657D2335DD3300898A68 /* CouponListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponListCell.swift; sourceTree = "<group>"; };
+		64FD657E2335DD3300898A68 /* CouponListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CouponListCell.xib; sourceTree = "<group>"; };
+		64FD65812335E28A00898A68 /* Int+Comma.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Comma.swift"; sourceTree = "<group>"; };
+		64FD65832335E6F500898A68 /* CouponListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponListProvider.swift; sourceTree = "<group>"; };
+		64FD65872335F73800898A68 /* CouponListEmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponListEmptyCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,11 +242,10 @@
 		64FD65202335AEFD00898A68 /* CouponList */ = {
 			isa = PBXGroup;
 			children = (
-				64FD653F2335B9AB00898A68 /* CouponListViewController.storyboard */,
-				64FD65412335B9AB00898A68 /* CouponListInteractor.swift */,
-				64FD653D2335B9AB00898A68 /* CouponListPresenter.swift */,
-				64FD653E2335B9AB00898A68 /* CouponListRouter.swift */,
-				64FD65402335B9AB00898A68 /* CouponListViewController.swift */,
+				64FD65772335DC9200898A68 /* Interactor */,
+				64FD65782335DC9D00898A68 /* Presenter */,
+				64FD65792335DCA500898A68 /* Router */,
+				64FD657A2335DCB000898A68 /* View */,
 			);
 			path = CouponList;
 			sourceTree = "<group>";
@@ -305,6 +320,8 @@
 		64FD65492335B9C200898A68 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				64FD65732335DC3400898A68 /* UICollectionView+CellCastable.swift */,
+				64FD65752335DC4900898A68 /* UICollectionViewCell+Identifier.swift */,
 				64FD654A2335BDC500898A68 /* UIColor+AppTheme.swift */,
 				64FD653C2335B9AB00898A68 /* UIViewController+Instantiate.swift */,
 			);
@@ -314,6 +331,7 @@
 		64FD65502335C64000898A68 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				64FD65812335E28A00898A68 /* Int+Comma.swift */,
 				64FD65512335C64E00898A68 /* String+Localized.swift */,
 			);
 			path = Foundation;
@@ -340,6 +358,44 @@
 				64FD656D2335CD3F00898A68 /* STVCoupon-Bridging-Header.h */,
 			);
 			path = ExceptionHandler;
+			sourceTree = "<group>";
+		};
+		64FD65772335DC9200898A68 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				64FD65412335B9AB00898A68 /* CouponListInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		64FD65782335DC9D00898A68 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				64FD653D2335B9AB00898A68 /* CouponListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		64FD65792335DCA500898A68 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				64FD653E2335B9AB00898A68 /* CouponListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		64FD657A2335DCB000898A68 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				64FD657D2335DD3300898A68 /* CouponListCell.swift */,
+				64FD657E2335DD3300898A68 /* CouponListCell.xib */,
+				64FD65872335F73800898A68 /* CouponListEmptyCell.swift */,
+				64FD65832335E6F500898A68 /* CouponListProvider.swift */,
+				64FD653F2335B9AB00898A68 /* CouponListViewController.storyboard */,
+				64FD65402335B9AB00898A68 /* CouponListViewController.swift */,
+				64FD657B2335DCEA00898A68 /* NibRegistrable.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -449,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64FD64F92335ADE600898A68 /* LaunchScreen.storyboard in Resources */,
+				64FD65802335DD3300898A68 /* CouponListCell.xib in Resources */,
 				64FD654F2335C56C00898A68 /* Localizable.strings in Resources */,
 				64FD65452335B9AB00898A68 /* CouponListViewController.storyboard in Resources */,
 				64FD64F62335ADE600898A68 /* Assets.xcassets in Resources */,
@@ -505,9 +562,12 @@
 				64FD65342335B5F000898A68 /* EncodingType.swift in Sources */,
 				64FD65422335B9AB00898A68 /* UIViewController+Instantiate.swift in Sources */,
 				64FD64EF2335ADE400898A68 /* AppDelegate.swift in Sources */,
+				64FD65842335E6F500898A68 /* CouponListProvider.swift in Sources */,
 				64FD65312335B5F000898A68 /* APIError.swift in Sources */,
 				64FD65702335CD3F00898A68 /* ExceptionHandler.m in Sources */,
+				64FD657C2335DCEA00898A68 /* NibRegistrable.swift in Sources */,
 				64FD65332335B5F000898A68 /* APIRequest.swift in Sources */,
+				64FD65762335DC4900898A68 /* UICollectionViewCell+Identifier.swift in Sources */,
 				64FD655F2335CAD600898A68 /* CouponEntity.swift in Sources */,
 				64FD65432335B9AB00898A68 /* CouponListPresenter.swift in Sources */,
 				64FD65722335CD7400898A68 /* ExceptionCatchable.swift in Sources */,
@@ -516,6 +576,7 @@
 				64FD65522335C64E00898A68 /* String+Localized.swift in Sources */,
 				64FD654D2335C1C500898A68 /* CouponListAPIReturnCode.swift in Sources */,
 				64FD65462335B9AB00898A68 /* CouponListViewController.swift in Sources */,
+				64FD65742335DC3400898A68 /* UICollectionView+CellCastable.swift in Sources */,
 				64FD65442335B9AB00898A68 /* CouponListRouter.swift in Sources */,
 				64FD65672335CCEA00898A68 /* Realm+Shared.swift in Sources */,
 				64FD65392335B74600898A68 /* CouponListAPIRequest.swift in Sources */,
@@ -523,8 +584,11 @@
 				64FD65612335CB6500898A68 /* CouponDao.swift in Sources */,
 				64FD656B2335CCEA00898A68 /* Realm+WriteAsync.swift in Sources */,
 				64FD653B2335B78D00898A68 /* CouponListAPIResponse.swift in Sources */,
+				64FD65882335F73800898A68 /* CouponListEmptyCell.swift in Sources */,
 				64FD65682335CCEA00898A68 /* RealmInitializer.swift in Sources */,
 				64FD656A2335CCEA00898A68 /* RealmDaoHelper.swift in Sources */,
+				64FD65822335E28A00898A68 /* Int+Comma.swift in Sources */,
+				64FD657F2335DD3300898A68 /* CouponListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

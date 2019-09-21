@@ -13,3 +13,7 @@
 "ERROR" = "エラー";
 "COUPON_LIST_ERROR_1001" = "内部エラーが発生しました。";
 "COUPON_LIST_ERROR_9999" = "現在一時的にご利用できない状態となっております。\n今しばらくお待ち下さい。";
+
+"COUPON_LIST_TITLE" = "¥ %@ OFF \nCOUPON";
+"EXPIRE" = "有効期限";
+"USED" = "利用済み";

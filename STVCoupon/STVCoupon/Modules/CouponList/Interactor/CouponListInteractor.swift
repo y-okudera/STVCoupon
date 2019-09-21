@@ -13,12 +13,14 @@ import Foundation
 /// API・DBからデータを取得する
 protocol CouponListUsecase {
     func requestCouponList()
+    func updateCoupon(couponEntity: CouponEntity)
 }
 
 /// 処理結果をPresenterに通知する
 protocol CouponListInteractorDelegate: class {
     func didFetchCouponList(coupons: [CouponEntity])
     func didFailWithAPIError(errorMessage: String)
+    func didFinishUpdate(coupons: [CouponEntity])
 }
 
 // MARK: - class
@@ -54,7 +56,8 @@ extension CouponListInteractor: CouponListUsecase {
                 
                 // 正常終了を通知
                 let savedCoupons = self.readCouponsFromDatabase()
-                self.output?.didFetchCouponList(coupons: savedCoupons)
+                let coupons = savedCoupons.map { CouponEntity(value: $0) }
+                self.output?.didFetchCouponList(coupons: coupons)
             }
             .catch { error in
                 
@@ -70,13 +73,24 @@ extension CouponListInteractor: CouponListUsecase {
                 if case .connectionError = apiError {
                     let savedCoupons = self.readCouponsFromDatabase()
                     // 正常終了を通知
-                    self.output?.didFetchCouponList(coupons: savedCoupons)
+                    let coupons = savedCoupons.map { CouponEntity(value: $0) }
+                    self.output?.didFetchCouponList(coupons: coupons)
                 }
                 
                 // エラーを通知
                 let errorMessage = "COUPON_LIST_ERROR_9999".localized()
                 self.output?.didFailWithAPIError(errorMessage: errorMessage)
         }
+    }
+    
+    func updateCoupon(couponEntity: CouponEntity) {
+        let dao = CouponDao()
+        dao.delegate = self
+        dao.update(coupon: couponEntity)
+        
+        let savedCoupons = self.readCouponsFromDatabase()
+        let coupons = savedCoupons.map { CouponEntity(value: $0) }
+        self.output?.didFinishUpdate(coupons: coupons)
     }
     
     /// APIのエラーチェック
