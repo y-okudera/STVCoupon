@@ -10,4 +10,5 @@ import Foundation
 
 enum DateFormat: String {
     case yMd_None = "yyyyMMdd"
+    case yMdHms_None = "yyyyMMddHHmmss"
 }

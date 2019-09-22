@@ -22,48 +22,12 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2fF-Uy-UDW">
-                                    <size key="itemSize" width="400" height="92"/>
+                                    <size key="itemSize" width="0.0" height="0.0"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CouponListEmptyCell" id="bpI-ly-Wry" customClass="CouponListEmptyCell" customModule="STVCoupon" customModuleProvider="target">
-                                        <rect key="frame" x="7" y="10" width="400" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現在ご利用できるクーポンがありません。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGL-6i-b0g">
-                                                    <rect key="frame" x="16" y="13" width="368" height="18"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="368" id="h46-1f-tKv"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </view>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailingMargin" secondItem="PGL-6i-b0g" secondAttribute="trailing" constant="8" id="fRX-Gi-tAj"/>
-                                            <constraint firstItem="PGL-6i-b0g" firstAttribute="leading" secondItem="bpI-ly-Wry" secondAttribute="leadingMargin" constant="8" id="gNJ-fe-EuQ"/>
-                                            <constraint firstItem="PGL-6i-b0g" firstAttribute="centerY" secondItem="bpI-ly-Wry" secondAttribute="centerY" id="oMH-B4-yB6"/>
-                                        </constraints>
-                                        <size key="customSize" width="400" height="44"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <outlet property="messageLabel" destination="PGL-6i-b0g" id="pde-WY-EBA"/>
-                                            <outlet property="messageLabelWidthLayout" destination="h46-1f-tKv" id="EDw-l1-vMb"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

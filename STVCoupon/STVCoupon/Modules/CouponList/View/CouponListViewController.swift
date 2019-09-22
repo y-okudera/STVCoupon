@@ -25,7 +25,6 @@ final class CouponListViewController: UIViewController {
     
     // Presenterへのアクセスはprotocolを介して行う
     var presenter: CouponListPresentation!
-    var couponListProvider: CouponListProvider!
     
     // MARK: - Life cycle
     
@@ -33,7 +32,9 @@ final class CouponListViewController: UIViewController {
         super.viewDidLoad()
         collectionView.dataSource = presenter.couponListProvider
         collectionView.delegate = self
+        
         CouponListCell.register(collectionView: collectionView)
+        CouponListEmptyCell.register(collectionView: collectionView)
         
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
@@ -42,9 +43,13 @@ final class CouponListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         SVProgressHUD.show()
         presenter.viewWillAppear()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionView.reloadData()
     }
 }
 
@@ -72,5 +77,17 @@ extension CouponListViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         presenter.didSelectItemAt(indexPath: indexPath)
+    }
+}
+
+extension CouponListViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if presenter.couponListProvider.couponEntities.isEmpty {
+            return CouponListEmptyCell.prototypeCellSize()
+        }
+        return CouponListCell.prototypeCellSize()
     }
 }

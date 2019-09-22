@@ -8,10 +8,28 @@
 
 import UIKit
 
+enum CouponDetailViewStatus {
+    
+    case unused
+    case usageConfirm
+    case used
+    
+    func couponBaseViewHeight() -> CGFloat {
+        switch self {
+        case .unused:
+            return CGFloat(250)
+        case .usageConfirm:
+            return CGFloat(500)
+        case .used:
+            return CGFloat(250)
+        }
+    }
+}
+
 // MARK: - protocol
 
 protocol CouponDetailView: class {
-    func showAlert(title: String?, message: String)
+    func reloadView(couponDetailViewStatus: CouponDetailViewStatus)
 }
 
 // MARK: - class
@@ -19,70 +37,95 @@ protocol CouponDetailView: class {
 /// クーポン詳細画面
 final class CouponDetailViewController: UIViewController {
     
-    @IBOutlet weak var couponBaseViewHeightLayout: NSLayoutConstraint! {
+    @IBOutlet private weak var couponBaseViewHeightLayout: NSLayoutConstraint! {
         didSet {
             couponBaseViewHeightLayout.constant = 250
         }
     }
     
-    @IBOutlet weak var couponTitleLabel: UILabel!
-    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet private weak var couponTitleLabel: UILabel!
+    @IBOutlet private weak var stackView: UIStackView!
     
     // willUseView
-    @IBOutlet var willUseView: UIView!
-    @IBOutlet weak var expireLabel: UILabel!
+    @IBOutlet private var willUseView: UIView!
+    @IBOutlet private weak var expireLabel: UILabel!
     
-    // willUseView
-    @IBOutlet var usageConfirmView: UIView!
+    // usageConfirmView
+    @IBOutlet private var usageConfirmView: UIView!
+    @IBOutlet private weak var expireLabelInUsageConfirmView: UILabel!
     
-    // willUseView
-    @IBOutlet var usedView: UIView!
-    @IBOutlet weak var usedDateLabel: UILabel!
+    // usedView
+    @IBOutlet private var usedView: UIView!
+    @IBOutlet private weak var usedDateLabel: UILabel!
     // Presenterへのアクセスはprotocolを介して行う
     var presenter: CouponDetailPresentation!
+    
+    private var stackedView: UIView?
     
     // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.viewDidLoad()
         
-        if presenter.couponEntity.usedDate == nil {
-            stackView.addArrangedSubview(willUseView)
-            expireLabel.text = presenter.couponEntity.validPeriod()
-        } else {
-            stackView.addArrangedSubview(usedView)
-        }
+        let downSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(self.close))
+        downSwipeGesture.direction = .down
+        view.addGestureRecognizer(downSwipeGesture)
+        
+        stackView.addArrangedSubview(willUseView)
+        stackView.addArrangedSubview(usageConfirmView)
+        stackView.addArrangedSubview(usedView)
+        reloadView(couponDetailViewStatus: .unused)
     }
     
-    @IBAction func tappedCloseButton(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-        dismiss(animated: true) {
-            let couponListViewController = self.presentingViewController as! CouponListViewController
-            couponListViewController.reloadCouponList()
-        }
+    @IBAction private func tappedCloseButton(_ sender: UIButton) {
+        close()
     }
     
     /// 使う
-    @IBAction func tappedUseButton(_ sender: UIButton) {
+    @IBAction private func tappedUseButton(_ sender: UIButton) {
+        reloadView(couponDetailViewStatus: .usageConfirm)
     }
     
     /// 使う(詳細)
-    @IBAction func tappedUseInConfirm(_ sender: UIButton) {
+    @IBAction private func tappedUseInConfirm(_ sender: UIButton) {
+        presenter.useCoupon()
     }
     
     /// 今は使わない
-    @IBAction func tappedUnuseInConfirm(_ sender: UIButton) {
+    @IBAction private func tappedUnuseInConfirm(_ sender: UIButton) {
+        reloadView(couponDetailViewStatus: .unused)
+    }
+    
+    /// 画面を閉じる
+    @objc
+    private func close() {
+        dismiss(animated: true)
     }
 }
 
 extension CouponDetailViewController: CouponDetailView {
     
-    func showAlert(title: String?, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(
-            .init(title: "OK", style: .default)
-        )
-        self.present(alert, animated: true, completion: nil)
+    func reloadView(couponDetailViewStatus: CouponDetailViewStatus) {
+        
+        switch couponDetailViewStatus {
+        case .unused:
+            willUseView.isHidden = false
+            usageConfirmView.isHidden = true
+            usedView.isHidden = true
+            expireLabel.text = presenter.couponEntity.validPeriod()
+            
+        case .usageConfirm:
+            willUseView.isHidden = true
+            usageConfirmView.isHidden = false
+            usedView.isHidden = true
+            expireLabelInUsageConfirmView.text = presenter.couponEntity.validPeriod()
+            
+        case .used:
+            willUseView.isHidden = true
+            usageConfirmView.isHidden = true
+            usedView.isHidden = false
+            usedDateLabel.text = presenter.couponEntity.usedDate
+        }
+        couponBaseViewHeightLayout.constant = couponDetailViewStatus.couponBaseViewHeight()
     }
 }

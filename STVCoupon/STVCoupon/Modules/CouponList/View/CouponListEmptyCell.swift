@@ -10,7 +10,6 @@ import UIKit
 
 final class CouponListEmptyCell: UICollectionViewCell {
     
-    @IBOutlet private weak var messageLabel: UILabel!
     @IBOutlet private weak var messageLabelWidthLayout: NSLayoutConstraint!
     
     override func awakeFromNib() {
@@ -23,6 +22,8 @@ final class CouponListEmptyCell: UICollectionViewCell {
         let bottomConstraint = self.contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         NSLayoutConstraint.activate([leftConstraint, rightConstraint, topConstraint, bottomConstraint])
         
-        messageLabelWidthLayout.constant = UIScreen.main.bounds.width - 32
+        messageLabelWidthLayout.constant = type(of: self).width
     }
 }
+
+extension CouponListEmptyCell: CollectionViewNibRegistrable {}

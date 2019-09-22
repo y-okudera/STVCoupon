@@ -11,8 +11,8 @@ import Foundation
 // MARK: - protocol
 
 protocol CouponDetailPresentation: class {
-    func viewDidLoad()
-    var couponEntity: CouponEntity! {get set}
+    func useCoupon()
+    var couponEntity: CouponEntity! { get }
 }
 
 // MARK: - class
@@ -30,25 +30,20 @@ final class CouponDetailPresenter {
         self.interactor = interactor
         self.router = router
         self.couponEntity = couponEntity
-        
-        print("couponEntity", couponEntity)
     }
 }
 
 extension CouponDetailPresenter: CouponDetailPresentation {
-    func viewDidLoad() {
-        print(String(describing: type(of: self)), #line, #function)
-        interactor.requestLogin(userId: "userA", password: "password", uuid: UUID().uuidString)
+    
+    func useCoupon() {
+        self.couponEntity.setUsedDate()
+        self.interactor.updateCoupon(couponEntity: self.couponEntity)
     }
 }
 
 extension CouponDetailPresenter: CouponDetailInteractorDelegate {
-
-    func didSucceedLogin() {
-        view?.showAlert(title: nil, message: "ログイン成功")
-    }
-
-    func didFailLoginWithAPIError(apiError: Error) {
-        print(apiError)
+    
+    func didFinishUpdateCoupon() {
+        view?.reloadView(couponDetailViewStatus: .used)
     }
 }

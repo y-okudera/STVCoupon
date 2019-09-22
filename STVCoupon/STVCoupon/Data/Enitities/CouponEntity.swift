@@ -58,4 +58,10 @@ final class CouponEntity: RealmSwift.Object {
         }
         return fromExpireDate.toString(template: .date) + "〜" + toExpireDate.toString(template: .date)
     }
+    
+    /// 利用日時に現在時刻をセットする
+    func setUsedDate() {
+        let nowString = Date().toString(template: .dateTime)
+        self.usedDate = nowString
+    }
 }

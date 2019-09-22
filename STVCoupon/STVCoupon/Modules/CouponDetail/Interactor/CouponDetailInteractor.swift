@@ -12,13 +12,12 @@ import Foundation
 
 /// API・DBからデータを取得する
 protocol CouponDetailUsecase {
-    func requestLogin(userId: String, password: String, uuid: String)
+    func updateCoupon(couponEntity: CouponEntity)
 }
 
 /// 処理結果をPresenterに通知する
 protocol CouponDetailInteractorDelegate: class {
-    func didSucceedLogin()
-    func didFailLoginWithAPIError(apiError: Error)
+    func didFinishUpdateCoupon()
 }
 
 // MARK: - class
@@ -28,11 +27,17 @@ final class CouponDetailInteractor {
 }
 
 extension CouponDetailInteractor: CouponDetailUsecase {
+    
+    func updateCoupon(couponEntity: CouponEntity) {
+        let dao = CouponDao()
+        dao.delegate = self
+        dao.update(coupon: couponEntity)
+        self.output?.didFinishUpdateCoupon()
+    }
+}
 
-    func requestLogin(userId: String, password: String, uuid: String) {
-        // ログインAPIのリクエストをする
-
-        // 結果を通知する
-        output?.didSucceedLogin()
+extension CouponDetailInteractor: CouponDaoDelegate {
+    func caughtError(couponDao: CouponDao, error: Error) {
+        assertionFailure("クーポンデータの更新失敗")
     }
 }

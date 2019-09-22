@@ -11,7 +11,8 @@ import Foundation
 extension DateFormatter {
     // テンプレートの定義
     enum Template: String {
-        case date = "yMd" // 2017/1/1
+        case date = "yyyy/MM/dd"
+        case dateTime = "yyyy/MM/dd HH:mm:ss"
     }
 
     func setTemplate(_ template: Template) {
