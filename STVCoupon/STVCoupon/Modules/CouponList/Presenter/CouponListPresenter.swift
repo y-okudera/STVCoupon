@@ -60,7 +60,7 @@ extension CouponListPresenter: CouponListPresentation {
 extension CouponListPresenter: CouponListInteractorDelegate {
     
     func didFetchCouponList(coupons: [CouponEntity]) {
-        self.couponListProvider.set(couponEntities: coupons)
+        couponListProvider.set(couponEntities: coupons)
         view?.reloadCouponList()
     }
     

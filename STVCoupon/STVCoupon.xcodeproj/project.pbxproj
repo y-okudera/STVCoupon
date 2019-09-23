@@ -10,7 +10,6 @@
 		64FD64EF2335ADE400898A68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD64EE2335ADE400898A68 /* AppDelegate.swift */; };
 		64FD64F62335ADE600898A68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64FD64F52335ADE600898A68 /* Assets.xcassets */; };
 		64FD64F92335ADE600898A68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64FD64F72335ADE600898A68 /* LaunchScreen.storyboard */; };
-		64FD65042335ADE600898A68 /* STVCouponTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD65032335ADE600898A68 /* STVCouponTests.swift */; };
 		64FD650F2335ADE600898A68 /* STVCouponUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD650E2335ADE600898A68 /* STVCouponUITests.swift */; };
 		64FD65272335B43900898A68 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64FD65232335B43800898A68 /* Alamofire.framework */; };
 		64FD65282335B43900898A68 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64FD65242335B43800898A68 /* PromiseKit.framework */; };
@@ -63,6 +62,10 @@
 		64FD65BD233609B100898A68 /* Locale+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD65B3233609B100898A68 /* Locale+Extensions.swift */; };
 		64FD66142337BCC000898A68 /* CouponListEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD66122337BCC000898A68 /* CouponListEmptyCell.swift */; };
 		64FD66152337BCC000898A68 /* CouponListEmptyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64FD66132337BCC000898A68 /* CouponListEmptyCell.xib */; };
+		64FD661B23386E6900898A68 /* CouponListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD661A23386E6900898A68 /* CouponListPresenterTests.swift */; };
+		64FD661D23386E9000898A68 /* CouponListViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD661C23386E9000898A68 /* CouponListViewMock.swift */; };
+		64FD661F23386ED200898A68 /* CouponListRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD661E23386ED200898A68 /* CouponListRouterMock.swift */; };
+		64FD662123386EEA00898A68 /* CouponListInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD662023386EEA00898A68 /* CouponListInteractorMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,7 +92,6 @@
 		64FD64F82335ADE600898A68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64FD64FA2335ADE600898A68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64FD64FF2335ADE600898A68 /* STVCouponTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STVCouponTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		64FD65032335ADE600898A68 /* STVCouponTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STVCouponTests.swift; sourceTree = "<group>"; };
 		64FD65052335ADE600898A68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64FD650A2335ADE600898A68 /* STVCouponUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STVCouponUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64FD650E2335ADE600898A68 /* STVCouponUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STVCouponUITests.swift; sourceTree = "<group>"; };
@@ -147,6 +149,10 @@
 		64FD65B3233609B100898A68 /* Locale+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+Extensions.swift"; sourceTree = "<group>"; };
 		64FD66122337BCC000898A68 /* CouponListEmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponListEmptyCell.swift; sourceTree = "<group>"; };
 		64FD66132337BCC000898A68 /* CouponListEmptyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CouponListEmptyCell.xib; sourceTree = "<group>"; };
+		64FD661A23386E6900898A68 /* CouponListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponListPresenterTests.swift; sourceTree = "<group>"; };
+		64FD661C23386E9000898A68 /* CouponListViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponListViewMock.swift; sourceTree = "<group>"; };
+		64FD661E23386ED200898A68 /* CouponListRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponListRouterMock.swift; sourceTree = "<group>"; };
+		64FD662023386EEA00898A68 /* CouponListInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponListInteractorMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,7 +222,7 @@
 		64FD65022335ADE600898A68 /* STVCouponTests */ = {
 			isa = PBXGroup;
 			children = (
-				64FD65032335ADE600898A68 /* STVCouponTests.swift */,
+				64FD661723386DD700898A68 /* Modules */,
 				64FD65052335ADE600898A68 /* Info.plist */,
 			);
 			path = STVCouponTests;
@@ -481,6 +487,33 @@
 			path = Date;
 			sourceTree = "<group>";
 		};
+		64FD661723386DD700898A68 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				64FD661823386DE000898A68 /* CouponList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		64FD661823386DE000898A68 /* CouponList */ = {
+			isa = PBXGroup;
+			children = (
+				64FD661923386DEF00898A68 /* PresenterTest */,
+			);
+			path = CouponList;
+			sourceTree = "<group>";
+		};
+		64FD661923386DEF00898A68 /* PresenterTest */ = {
+			isa = PBXGroup;
+			children = (
+				64FD662023386EEA00898A68 /* CouponListInteractorMock.swift */,
+				64FD661A23386E6900898A68 /* CouponListPresenterTests.swift */,
+				64FD661E23386ED200898A68 /* CouponListRouterMock.swift */,
+				64FD661C23386E9000898A68 /* CouponListViewMock.swift */,
+			);
+			path = PresenterTest;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -693,7 +726,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64FD65042335ADE600898A68 /* STVCouponTests.swift in Sources */,
+				64FD661F23386ED200898A68 /* CouponListRouterMock.swift in Sources */,
+				64FD661D23386E9000898A68 /* CouponListViewMock.swift in Sources */,
+				64FD661B23386E6900898A68 /* CouponListPresenterTests.swift in Sources */,
+				64FD662123386EEA00898A68 /* CouponListInteractorMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
