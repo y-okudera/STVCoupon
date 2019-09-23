@@ -11,7 +11,7 @@ import UIKit
 // MARK: - protocol
 
 protocol CouponListWireframe: class {
-    func showCouponDetail(_ coupon: Coupon)
+    func showCouponDetail(_ couponEntity: CouponEntity)
 }
 
 // MARK: - class
@@ -48,7 +48,8 @@ final class CouponListRouter {
 
 extension CouponListRouter: CouponListWireframe {
     
-    func showCouponDetail(_ coupon: Coupon) {
-        // TODO: 詳細画面をモーダル表示
+    func showCouponDetail(_ couponEntity: CouponEntity) {
+        let couponDetailView = CouponDetailRouter.assembleModules(couponEntity: couponEntity)
+        viewController?.present(couponDetailView, animated: true, completion: nil)
     }
 }

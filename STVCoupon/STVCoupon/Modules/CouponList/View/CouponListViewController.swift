@@ -6,13 +6,13 @@
 //  Copyright © 2019 Yuki Okudera. All rights reserved.
 //
 
+import SVProgressHUD
 import UIKit
 
 // MARK: - protocol
 
 protocol CouponListView: class {
     func reloadCouponList()
-    func showCouponIsZeroMessage()
     func showAlert(title: String?, message: String)
 }
 
@@ -25,7 +25,6 @@ final class CouponListViewController: UIViewController {
     
     // Presenterへのアクセスはprotocolを介して行う
     var presenter: CouponListPresentation!
-    var couponListProvider: CouponListProvider!
     
     // MARK: - Life cycle
     
@@ -33,7 +32,9 @@ final class CouponListViewController: UIViewController {
         super.viewDidLoad()
         collectionView.dataSource = presenter.couponListProvider
         collectionView.delegate = self
+        
         CouponListCell.register(collectionView: collectionView)
+        CouponListEmptyCell.register(collectionView: collectionView)
         
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
@@ -42,7 +43,13 @@ final class CouponListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        SVProgressHUD.show()
         presenter.viewWillAppear()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionView.reloadData()
     }
 }
 
@@ -50,16 +57,14 @@ extension CouponListViewController: CouponListView {
     
     /// クーポン一覧を更新する
     func reloadCouponList() {
+        SVProgressHUD.dismiss()
         collectionView.reloadData()
-    }
-    
-    /// クーポン0件のメッセージを表示する
-    func showCouponIsZeroMessage() {
-        print("couponIsZero")
     }
     
     /// アラートを表示する
     func showAlert(title: String?, message: String) {
+        SVProgressHUD.dismiss()
+        
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(
             .init(title: "OK".localized(), style: .default)
@@ -72,5 +77,17 @@ extension CouponListViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         presenter.didSelectItemAt(indexPath: indexPath)
+    }
+}
+
+extension CouponListViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if presenter.couponListProvider.couponEntities.isEmpty {
+            return CouponListEmptyCell.prototypeCellSize()
+        }
+        return CouponListCell.prototypeCellSize()
     }
 }

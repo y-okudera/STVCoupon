@@ -16,21 +16,19 @@ final class CouponListCell: UICollectionViewCell {
     
     var delegate: CouponListCellDelegate?
     
+    var coupon: CouponEntity? {
+        didSet {
+            self.setCouponData(couponEntity: coupon)
+        }
+    }
+    
     @IBOutlet private weak var titleView: UIView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var expireView: UIView!
     @IBOutlet private weak var expireTitleLabel: UILabel!
     @IBOutlet private weak var expireLabel: UILabel!
     @IBOutlet private weak var wishButton: UIButton!
-    
-    @IBOutlet weak var titleViewWidthLayout: NSLayoutConstraint!
-    @IBOutlet weak var titleViewHeightLayout: NSLayoutConstraint!
-    
-    var coupon: CouponEntity? {
-        didSet {
-            self.setCouponData(couponEntity: coupon)
-        }
-    }
+    @IBOutlet private weak var titleViewWidthLayout: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,8 +40,12 @@ final class CouponListCell: UICollectionViewCell {
         let bottomConstraint = self.contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         NSLayoutConstraint.activate([leftConstraint, rightConstraint, topConstraint, bottomConstraint])
         
-        titleViewWidthLayout.constant = UIScreen.main.bounds.width - 16
-        titleViewHeightLayout.constant = 300
+        titleViewWidthLayout.constant = type(of: self).width
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.layoutIfNeeded()
     }
     
     @IBAction func tappedWishButton(_ sender: UIButton) {
@@ -56,8 +58,6 @@ final class CouponListCell: UICollectionViewCell {
     }
 }
 
-extension CouponListCell: CollectionViewNibRegistrable {}
-
 extension CouponListCell {
     
     private func setCouponData(couponEntity: CouponEntity?) {
@@ -66,29 +66,15 @@ extension CouponListCell {
             return
         }
         
-        titleLabel.text = String(format: "COUPON_LIST_TITLE".localized(), couponEntity.priceDown.withComma)
-        
-        // クーポン利用後の場合
         if let usedDate = couponEntity.usedDate {
-            expireTitleLabel.text = "USED".localized()
-            expireTitleLabel.font = .boldSystemFont(ofSize: expireTitleLabel.font.pointSize)
-            
-            expireLabel.text = usedDate
-            expireLabel.font = .systemFont(ofSize: expireLabel.font.pointSize)
-            
-            titleView.alpha = 0.5
-            expireView.alpha = 0.5
+            setLayoutWhenCouponUsed(usedDate: usedDate)
         } else {
-            expireTitleLabel.text = "EXPIRE".localized()
-            expireTitleLabel.font = .systemFont(ofSize: expireTitleLabel.font.pointSize)
-            
-            expireLabel.text = couponEntity.validPeriod()
-            expireLabel.font = .boldSystemFont(ofSize: expireLabel.font.pointSize)
-            
-            titleView.alpha = 1.0
-            expireView.alpha = 1.0
+            setLayoutWhenCouponUnused(couponEntity: couponEntity)
         }
         
+        // クーポンタイトル
+        titleLabel.text = String(format: "COUPON_LIST_TITLE".localized(), couponEntity.priceDown.withComma)
+        // いいねボタン
         wishButton.isSelected = couponEntity.wished
         
         // 上だけ角丸にする設定
@@ -102,6 +88,40 @@ extension CouponListCell {
                              cornerRadii: CGSize(width: 10, height: 10))
     }
     
+    /// 使用前のクーポンのレイアウト
+    private func setLayoutWhenCouponUnused(couponEntity: CouponEntity) {
+        // 有効期限タイトル設定
+        expireTitleLabel.text = "EXPIRE".localized()
+        expireTitleLabel.font = .systemFont(ofSize: 14.0)
+        expireTitleLabel.textColor = .lightGray
+        
+        // 有効期限設定
+        expireLabel.text = couponEntity.validPeriod()
+        expireLabel.font = .boldSystemFont(ofSize: 17.0)
+        expireLabel.textColor = .black
+        
+        // 透過度設定
+        titleView.alpha = 1.0
+        expireView.alpha = 1.0
+    }
+    
+    /// 使用後のクーポンのレイアウト
+    private func setLayoutWhenCouponUsed(usedDate: String) {
+        // 有効期限タイトル設定
+        expireTitleLabel.text = "USED".localized()
+        expireTitleLabel.font = .boldSystemFont(ofSize: 17.0)
+        expireTitleLabel.textColor = .black
+        
+        // 有効期限設定
+        expireLabel.text = usedDate
+        expireLabel.font = .systemFont(ofSize: 14.0)
+        expireLabel.textColor = .lightGray
+        
+        // 透過度設定
+        titleView.alpha = 0.5
+        expireView.alpha = 0.5
+    }
+    
     /// 角丸の設定
     private func roundingCorners(view: UIView, byRoundingCorners: UIRectCorner, cornerRadii: CGSize) {
         let path = UIBezierPath(roundedRect: view.bounds,
@@ -112,3 +132,5 @@ extension CouponListCell {
         view.layer.mask = mask
     }
 }
+
+extension CouponListCell: CollectionViewNibRegistrable {}

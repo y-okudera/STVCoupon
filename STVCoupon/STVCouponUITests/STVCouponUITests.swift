@@ -8,27 +8,49 @@
 
 import XCTest
 
-class STVCouponUITests: XCTestCase {
+final class STVCouponUITests: XCTestCase {
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
 
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
         XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    /// クーポン一覧画面でいいねボタンをタップした場合のテスト
+    ///
+    /// スクロールをして、セルの再利用が発生してもいいねボタンの状態が正しいことを確認する
+    func testCouponWishAndUnwish() {
+        
+        let app = XCUIApplication()
+        
+        let collectionView = app.collectionViews.element
+        let firstCell = collectionView.children(matching: .cell).element(boundBy: 0)
+        
+        // いいねボタン
+        let wishButton = firstCell.buttons["wish"]
+        
+        // いいねボタンタップ
+        wishButton.tap()
+        
+        // スクロール
+        collectionView.swipeUp()
+        collectionView.swipeUp()
+        collectionView.swipeDown()
+        
+        // いいねボタンタップ(いいね解除)
+        wishButton.tap()
+        
+        // スクロール
+        collectionView.swipeUp()
+        collectionView.swipeUp()
+        collectionView.swipeDown()
+        
+        sleep(1)
     }
-
 }
